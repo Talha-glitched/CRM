@@ -1,0 +1,211 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure body takes at least the full viewport height */
+}
+
+.page-container {
+    flex: 1;
+    /* Allow the container to grow and take up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.user-selection-wrapper {
+    flex: 1;
+    /* Allow this wrapper to grow and take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    /* Add padding for smaller screens */
+}
+
+.user-type-container {
+    background-color: white;
+    padding: 1.5rem;
+    /* Reduce padding for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.app-title {
+    font-size: 2rem;
+    /* Reduce font size for smaller screens */
+    color: #001f3f;
+    /* Dark navy blue */
+    margin-bottom: 1rem;
+}
+
+.user-type-container h1 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    /* Reduce font size for smaller screens */
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    /* Reduce margin for smaller screens */
+    color: #7f8c8d;
+    font-size: 1rem;
+    /* Reduce font size for smaller screens */
+}
+
+.user-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Reduce gap between cards for smaller screens */
+    flex-wrap: wrap;
+}
+
+.user-card {
+    background-color: #fff;
+    padding: 1rem;
+    /* Reduce padding for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* Make cards take full width on small screens */
+    max-width: 300px;
+    /* Limit maximum width */
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+    /* Add margin between stacked cards */
+}
+
+.user-card:hover {
+    transform: translateY(-10px);
+}
+
+.user-icon {
+    font-size: 2rem;
+    /* Reduce icon size for smaller screens */
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.user-card h2 {
+    font-size: 1.25rem;
+    /* Reduce font size for smaller screens */
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.select-btn {
+    background-color: #001f3f;
+    color: white;
+    padding: 0.5rem 1rem;
+    /* Reduce padding for smaller screens */
+    border: none;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    /* Reduce font size for smaller screens */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    /* Remove underline from Link */
+    display: inline-block;
+    /* Make Link behave like a button */
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+}
+
+.select-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Specific Card Colors */
+.user-card.rookie {
+    border-top: 4px solid #001f3f;
+}
+
+.user-card.starter {
+    border-top: 4px solid #001f3f;
+}
+
+.user-card.all-star {
+    border-top: 4px solid #001f3f;
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 1.75rem;
+        /* Further reduce font size for smaller screens */
+    }
+
+    .user-type-container h1 {
+        font-size: 1.25rem;
+        /* Further reduce font size for smaller screens */
+    }
+
+    .subtitle {
+        font-size: 0.875rem;
+        /* Further reduce font size for smaller screens */
+    }
+
+    .user-options {
+        flex-direction: column;
+        /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+
+    .user-card {
+        width: 90%;
+        /* Make cards take 90% of the width on small screens */
+    }
+
+    .select-btn {
+        font-size: 0.75rem;
+        /* Further reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.5rem;
+        /* Further reduce font size for very small screens */
+    }
+
+    .user-type-container h1 {
+        font-size: 1rem;
+        /* Further reduce font size for very small screens */
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        /* Further reduce font size for very small screens */
+    }
+
+    .user-card {
+        width: 100%;
+        /* Make cards take full width on very small screens */
+    }
+
+    .select-btn {
+        font-size: 0.625rem;
+        /* Further reduce font size for very small screens */
+    }
+}

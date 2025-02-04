@@ -1,0 +1,149 @@
+.navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem; /* Add padding for better spacing on mobile */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #003366 !important; /* Dark navy blue */
+  font-size: 1rem; /* Reduce font size */
+  margin-left: 0; /* Remove fixed margin for mobile */
+  flex-grow: 1; /* Allow brand to take available space */
+  text-align: center; /* Center align brand text */
+}
+
+.nav-link {
+  color: #003366 !important; /* Dark navy blue */
+  font-size: 0.9rem; /* Reduce font size */
+  margin-right: 0; /* Remove fixed margin for mobile */
+  padding: 0.5rem 1rem; /* Add padding for better touch targets */
+}
+
+.nav-link:hover {
+  color: #0056b3 !important; /* Slightly lighter blue on hover */
+}
+
+.nav-item {
+  margin-right: 0; /* Remove fixed margin for mobile */
+  text-align: center; /* Center align nav items */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 0; /* Remove fixed margin for mobile */
+  margin-right: 10px; /* Add spacing for mobile */
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem; /* Reduce icon size */
+  color: #003366; /* Dark navy blue */
+  padding: 0.5rem; /* Add padding for better touch targets */
+}
+
+.search-container.active .form-inline {
+  display: flex;
+  width: 100%; /* Full width for mobile */
+}
+
+.form-inline {
+  display: none;
+  margin-left: 0; /* Remove fixed margin for mobile */
+  width: 100%; /* Full width for mobile */
+}
+
+.form-control {
+  width: 100%; /* Full width for mobile */
+  font-size: 0.9rem; /* Reduce font size */
+  transition: width 0.3s ease;
+}
+
+.login-btn {
+  background-color: white; /* Default white background */
+  border: 1px solid #003366; /* Border to highlight button */
+  color: #003366; /* Text color */
+  padding: 5px 10px; /* Adjust padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px; /* Add spacing from the search bar */
+  font-size: 0.9rem; /* Reduce font size for mobile */
+}
+
+.login-btn:hover {
+  background-color: #003366; /* Change background on hover */
+  color: white; /* White text on hover */
+}
+
+.login-btn:focus {
+  outline: none;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+      font-size: 0.9rem; /* Further reduce font size for mobile */
+      margin-left: 0; /* Remove fixed margin */
+  }
+
+  .nav-link {
+      font-size: 0.8rem; /* Further reduce font size for mobile */
+      padding: 0.5rem; /* Adjust padding for better touch targets */
+  }
+
+  .search-container {
+      margin-left: 0; /* Remove fixed margin */
+      margin-right: 5px; /* Adjust spacing */
+  }
+
+  .search-icon {
+      font-size: 0.9rem; /* Further reduce icon size for mobile */
+  }
+
+  .form-control {
+      font-size: 0.8rem; /* Further reduce font size for mobile */
+  }
+
+  .login-btn {
+      font-size: 0.8rem; /* Further reduce font size for mobile */
+      padding: 4px 8px; /* Adjust padding for mobile */
+  }
+
+  .search-container.active .form-inline {
+      position: absolute;
+      top: 50px; /* Adjust based on your navbar height */
+      left: 10px;
+      right: 10px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000; /* Ensure search bar appears above other content */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+      font-size: 0.8rem; /* Further reduce font size for very small screens */
+  }
+
+  .nav-link {
+      font-size: 0.75rem; /* Further reduce font size for very small screens */
+  }
+
+  .search-icon {
+      font-size: 0.8rem; /* Further reduce icon size for very small screens */
+  }
+
+  .form-control {
+      font-size: 0.75rem; /* Further reduce font size for very small screens */
+  }
+
+  .login-btn {
+      font-size: 0.75rem; /* Further reduce font size for very small screens */
+  }
+}
