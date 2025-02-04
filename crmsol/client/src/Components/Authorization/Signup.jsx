@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./signup.css"; // Import the CSS file (you can reuse Login.css or create a new one)
+import "./signup.css";
 import { Link } from "react-router-dom";
+import { signupUser } from '../services/api'; // Import the signup API
 
 const Signup = () => {
     const [firstName, setFirstName] = useState("");
@@ -8,14 +9,31 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [message, setMessage] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle signup logic here
-        console.log("First Name:", firstName);
-        console.log("Last Name:", lastName);
-        console.log("Email:", email);
-        console.log("Password:", password);
+
+        const userData = {
+            firstName,
+            lastName,
+            email,
+            password,
+        };
+
+        try {
+            const response = await signupUser(userData);
+            setMessage("🎉 User registered successfully!");
+            console.log("Server Response:", response);
+            // Clear the form after successful registration
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setPassword("");
+        } catch (error) {
+            console.error("Signup Error:", error);
+            setMessage(error.message || "❌ Registration failed.");
+        }
     };
 
     return (
@@ -25,13 +43,15 @@ const Signup = () => {
                 <p>
                     Already have an account? <Link to="/Login">Log in</Link>
                 </p>
+
+                {message && <p className="message">{message}</p>}
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
                         <input
                             type="text"
                             id="firstName"
-                            name="firstName"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             required
@@ -42,7 +62,6 @@ const Signup = () => {
                         <input
                             type="text"
                             id="lastName"
-                            name="lastName"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             required
@@ -53,7 +72,6 @@ const Signup = () => {
                         <input
                             type="email"
                             id="email"
-                            name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -64,7 +82,6 @@ const Signup = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="password"
-                            name="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -77,7 +94,7 @@ const Signup = () => {
                         </span>
                     </div>
                     <div className="form-group">
-                        <input type="checkbox" id="terms" name="terms" required />
+                        <input type="checkbox" id="terms" required />
                         <label htmlFor="terms">
                             I agree to the <a href="#">Terms of Service</a> and{" "}
                             <a href="#">Privacy Policy</a>.
@@ -85,7 +102,6 @@ const Signup = () => {
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
-
             </div>
         </div>
     );
