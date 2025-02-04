@@ -1,17 +1,36 @@
 import React, { useState } from "react";
-import "./login.css"; // Import the CSS file
-import { Link } from "react-router-dom";
+import "./login.css";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from '../services/api'; // Import the login function
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState("");
+    const navigate = useNavigate(); // For programmatic navigation
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log("Email:", email);
-        console.log("Password:", password);
+        setError(""); // Clear previous errors
+
+        try {
+            const credentials = { email, password };
+            const response = await loginUser(credentials);
+
+         /*   if (response.role !== "user") { // 🚩 Check user role
+                setError("Access denied: Unauthorized role.");
+                return;
+            }*/
+
+            // Store token/user info if needed (localStorage/sessionStorage)
+            localStorage.setItem("user", JSON.stringify(response));
+
+            navigate("/Dashboard"); // Redirect on successful login
+        } catch (err) {
+            console.error(err);
+            setError(err.message || "Invalid credentials. Please try again.");
+        }
     };
 
     return (
@@ -19,6 +38,9 @@ const Login = () => {
             <div className="login-container">
                 <h1>Login</h1>
                 <p>Don't have an account? <Link to="/Signup">Get started free</Link></p>
+
+                {error && <div className="error-message">{error}</div>} {/* Error Display */}
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="email">Email address</label>
@@ -31,6 +53,7 @@ const Login = () => {
                             required
                         />
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input
@@ -48,12 +71,14 @@ const Login = () => {
                             {showPassword ? "Hide Password" : "Show Password"}
                         </span>
                     </div>
+
                     <div className="form-group">
                         <input type="checkbox" id="remember" name="remember" />
                         <label htmlFor="remember">Remember me</label>
                         <a href="#" className="forgot-password">Forgot my password?</a>
                     </div>
-                    <Link to="/Dashboard" className="login-button">Log in</Link>
+
+                    <button type="submit" className="login-button">Log in</button>
                 </form>
             </div>
         </div>
