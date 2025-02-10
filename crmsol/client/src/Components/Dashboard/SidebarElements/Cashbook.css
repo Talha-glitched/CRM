@@ -1,111 +1,190 @@
+/* Mobile first approach */
 .cashbook-page {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .cashbook-page {
     padding: 2rem;
   }
-  
+}
+
+.cashbook-page h1 {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
   .cashbook-page h1 {
-    margin-bottom: 2rem;
-    color: #1a1a1a;
     font-size: 2rem;
-    font-weight: 600;
+    margin-bottom: 2rem;
   }
-  
+}
+
+.cashbook-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
   .cashbook-content {
-    display: flex;
-    flex-direction: column;
     gap: 2rem;
   }
-  
+}
+
+.cashbook-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
   .cashbook-summary {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+}
+
+@media (min-width: 1024px) {
+  .cashbook-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.summary-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
   .summary-card {
-    background: white;
-    border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
-  
+}
+
+.summary-card h3 {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
   .summary-card h3 {
-    color: #4b5563;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
   }
-  
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 640px) {
   .amount {
     font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
   }
-  
-  .income .amount {
-    color: #16a34a;
-  }
-  
-  .expenses .amount {
-    color: #dc2626;
-  }
-  
-  .balance .amount {
-    color: #0452a0;
-  }
-  
+}
+
+.income .amount { color: #16a34a; }
+.expenses .amount { color: #dc2626; }
+.balance .amount { color: #0452a0; }
+
+.period {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
   .period {
-    color: #6b7280;
     font-size: 0.875rem;
   }
-  
+}
+
+.transaction-list {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+@media (min-width: 640px) {
   .transaction-list {
-    background: white;
-    border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
-  
+}
+
+.transaction-list h2 {
+  color: #1a1a1a;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
   .transaction-list h2 {
-    color: #1a1a1a;
     font-size: 1.25rem;
-    font-weight: 600;
     margin-bottom: 1.5rem;
   }
-  
+}
+
+.transaction-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@media (min-width: 640px) {
   .transaction-item {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #e5e7eb;
   }
-  
-  .transaction-item:last-child {
-    border-bottom: none;
-  }
-  
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-info {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
   .transaction-info {
     flex: 1;
+    margin-bottom: 0;
   }
-  
-  .transaction-title {
-    color: #1a1a1a;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-  }
-  
+}
+
+.transaction-title {
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.transaction-date {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
   .transaction-date {
-    color: #6b7280;
     font-size: 0.875rem;
   }
-  
-  .transaction-amount {
-    font-weight: 600;
-  }
-  
-  .transaction-amount.income {
-    color: #16a34a;
-  }
-  
-  .transaction-amount.expense {
-    color: #dc2626;
-  }
+}
+
+.transaction-amount {
+  font-weight: 600;
+}
+
+.transaction-amount.income { color: #16a34a; }
+.transaction-amount.expense { color: #dc2626; }

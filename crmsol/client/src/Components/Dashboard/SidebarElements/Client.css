@@ -1,92 +1,157 @@
+/* Mobile first approach */
 .client-page {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .client-page {
     padding: 2rem;
   }
-  
+}
+
+.client-page h1 {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
   .client-page h1 {
-    margin-bottom: 2rem;
-    color: #1a1a1a;
     font-size: 2rem;
-    font-weight: 600;
+    margin-bottom: 2rem;
   }
-  
+}
+
+.client-content {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
   .client-content {
-    background: white;
-    border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
-  
+}
+
+.client-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
   .client-filters {
-    display: flex;
+    flex-direction: row;
     gap: 1rem;
-    margin-bottom: 1.5rem;
   }
-  
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
   .search-input {
-    padding: 0.5rem 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
     width: 300px;
   }
-  
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
   .filter-select {
-    padding: 0.5rem 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
+    width: auto;
     min-width: 150px;
   }
-  
-  .client-table {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
+}
+
+.client-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+@media (min-width: 640px) {
   th, td {
     padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #e5e7eb;
   }
-  
-  th {
-    background: #f9fafb;
-    font-weight: 600;
-    color: #4b5563;
-  }
-  
+}
+
+th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
   .status-badge {
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
     font-size: 0.875rem;
-    font-weight: 500;
   }
-  
-  .status-badge.active {
-    background: #dcfce7;
-    color: #16a34a;
-  }
-  
-  .status-badge.inactive {
-    background: #fee2e2;
-    color: #dc2626;
-  }
-  
+}
+
+.status-badge.active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status-badge.inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.action-btn {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: white;
+  color: #4b5563;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
   .action-btn {
     padding: 0.25rem 0.75rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    background: white;
-    color: #4b5563;
-    margin-right: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s;
   }
-  
-  .action-btn:hover {
-    background: #f3f4f6;
-    color: #1e40af;
-  }
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+}
