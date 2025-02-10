@@ -1,0 +1,85 @@
+.sidebar {
+  width: 250px;
+  background: white;
+  height: calc(100vh - 64px);
+  border-right: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Common nav item styles */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: #4b5563;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: white;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.nav-item:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+}
+
+/* Active state */
+.nav-item.active {
+  background: #e0e7ff;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+/* Ensure icons align properly */
+.nav-item svg {
+  min-width: 20px;
+}
+
+/* Users dropdown button (ensures it matches other nav items) */
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  color: #4b5563;
+  background: white;
+  border: none;
+  cursor: pointer;
+  gap: 0.75rem;
+  font-size: 1rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+}
+
+.dropdown-btn svg:last-child {
+  margin-left: auto;
+}
+
+/* Submenu */
+.sub-menu {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}

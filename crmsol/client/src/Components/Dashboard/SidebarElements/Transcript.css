@@ -1,0 +1,91 @@
+.transcript-page {
+    padding: 2rem;
+  }
+  
+  .transcript-page h1 {
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .transcript-content {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transcript-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .filter-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: white;
+  }
+  
+  .transcript-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .transcript-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .transcript-item:hover {
+    background: #f9fafb;
+  }
+  
+  .transcript-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .transcript-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .transcript-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .transcript-type.meeting {
+    background: #e0e7ff;
+    color: #1e40af;
+  }
+  
+  .transcript-date {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .transcript-preview {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }

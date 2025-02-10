@@ -1,0 +1,92 @@
+.client-page {
+    padding: 2rem;
+  }
+  
+  .client-page h1 {
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .client-content {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .client-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .filter-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    min-width: 150px;
+  }
+  
+  .client-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #4b5563;
+  }
+  
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.active {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+  
+  .status-badge.inactive {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+  
+  .action-btn {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: white;
+    color: #4b5563;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .action-btn:hover {
+    background: #f3f4f6;
+    color: #1e40af;
+  }

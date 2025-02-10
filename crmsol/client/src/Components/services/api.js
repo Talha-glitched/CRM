@@ -15,3 +15,12 @@ export const signupUser = async (userData) => {
         throw error.response?.data || { message: 'Server error' };
     }
 };
+
+export const loginUser = async (credentials) => {
+    try {
+        const response = await API.post('/auth/login', credentials);
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : { message: "Network error" };
+    }
+};

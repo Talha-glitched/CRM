@@ -1,0 +1,140 @@
+/* DNavbar.css */
+
+/* Base styles for the navbar */
+.custom-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #003366, #0452a0);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Brand styling */
+  .custom-navbar-brand h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+  }
+  
+  /* Container for action buttons and user info */
+  .custom-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Base styles for action buttons */
+  .custom-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect for buttons */
+  .custom-action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  /* Active effect for buttons */
+  .custom-action-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* User info section */
+  .custom-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Hover effect for user info */
+  .custom-user-info:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon styling */
+  .custom-action-btn svg,
+  .custom-user-info svg {
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .custom-navbar {
+      padding: 0.75rem 1rem;
+    }
+  
+    .custom-navbar-brand h1 {
+      font-size: 1.25rem;
+    }
+  
+    .custom-action-btn span,
+    .custom-user-info span {
+      display: none; /* Hide text on smaller screens */
+    }
+  
+    .custom-action-btn,
+    .custom-user-info {
+      padding: 0.5rem;
+    }
+  }
+
+  /* Dropdown menu */
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.custom-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #003366;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-dropdown-item:hover {
+  background: rgba(0, 51, 102, 0.1);
+}
+
+.custom-dropdown-item svg {
+  color: #003366;
+}
+
+/* Ensure the user info section is positioned relative for the dropdown */
+.custom-user-info {
+  position: relative;
+}
